@@ -12,7 +12,7 @@ document.documentElement.classList.add(preferredTheme === 'dark' ? 'dark' : 'lig
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/my-portfolio">
       <ThemeProvider>
         <App />
       </ThemeProvider>
