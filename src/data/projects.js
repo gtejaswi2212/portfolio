@@ -1,5 +1,12 @@
 import { socialLinks } from './socialLinks';
 
+// Import images so Vite includes them in build with correct base path (GitHub Pages)
+import dataVizImg from '../assets/categories/data-viz.png';
+import aiMlImg from '../assets/categories/ai-ml.png';
+import softwareEngImg from '../assets/categories/software-eng.png';
+import travelwiseImg from '../assets/projects/travelwise-nyc-agentic-rag.png';
+import churnImg from '../assets/projects/churn-prediction.png';
+
 const hasGithubProfile = !socialLinks.github.includes('your-github-username');
 const GITHUB_BASE = hasGithubProfile ? socialLinks.github.replace(/\/$/, '') : null;
 const GITHUB_USER = hasGithubProfile ? socialLinks.github.replace(/^https?:\/\/github\.com\/?/, '').replace(/\/$/, '') : null;
@@ -7,17 +14,17 @@ const repoUrl = (repo) => (GITHUB_BASE ? `${GITHUB_BASE}/${repo}` : null);
 const demoUrlForRepo = (repo) => (GITHUB_USER ? `https://${GITHUB_USER}.github.io/${repo}/` : null);
 
 export const categoryImages = {
-  data: '/images/categories/data-viz.png',
-  aiMl: '/images/categories/ai-ml.png',
-  software: '/images/categories/software-eng.png',
+  data: dataVizImg,
+  aiMl: aiMlImg,
+  software: softwareEngImg,
 };
 
 export const projectImages = {
-  travelwise: '/images/projects/travelwise-nyc-agentic-rag.png',
-  churn: '/images/projects/churn-prediction.png',
-  aiMlFallback: categoryImages.aiMl,
-  dataFallback: categoryImages.data,
-  softwareFallback: categoryImages.software,
+  travelwise: travelwiseImg,
+  churn: churnImg,
+  aiMlFallback: aiMlImg,
+  dataFallback: dataVizImg,
+  softwareFallback: softwareEngImg,
 };
 
 export const projectCategories = [
